@@ -222,7 +222,8 @@
 				// Models
 				loader = new THREE.JSONLoader();
 				loader.load( "paddle.js", paddleLoaded );
-		
+				loader.load( "table.js", tableLoaded );
+
 
 				try {
 					webglRenderer = new THREE.WebGLRenderer( { scene: scene, clearColor: 0x000000, clearAlpha: 1.0, antialias: true } );
@@ -322,12 +323,17 @@
 				netLeft.updateMatrix();
 				scene.add(netLeft);
 
-				var m = new THREE.MeshPhongMaterial( { color: 0xffffff, map:THREE.ImageUtils.loadTexture( "surface0.jpg"), ambient: 0x000000, specular: 0x545454 } );
+				var m = new THREE.MeshPhongMaterial( { 
+					color: 0xffffff, 
+					map:THREE.ImageUtils.loadTexture( "surface0.jpg"), 
+					ambient: 0x000000, 
+					specular: 0x545454 
+				} );
 				m.map.repeat.x = 0.1;
 				m.map.repeat.y = 0.035;
 				m.map.wrapS = THREE.RepeatWrapping;
 				m.map.wrapT = THREE.RepeatWrapping;				
-				geometry.material.materials[1] = m;
+				geometry.materials[1] = m;
 
 				var table = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial() );
 				table.scale.set(0.4,0.4,0.4);
@@ -363,8 +369,6 @@
 				paddleChildAI = new THREE.Mesh( geometry, new THREE.MeshFaceMaterial() );
 				paddleChildAI.scale.set(0.4,0.4,0.4);
 				paddleAI.add(paddleChildAI);
-
-				loader.load( "table.js", tableLoaded );
 
 			}
 
