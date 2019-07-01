@@ -293,14 +293,14 @@
 			}
 
 			function tableLoaded( geometry ) {
-				console.log({"object": geometry});
+				console.log({"geometry": geometry});
 
 				var netPlane = new THREE.PlaneGeometry(70,5);
 				var material = new THREE.MeshBasicMaterial({
 					opacity:0.5, 
 					transparent: true, 
 					color: 0x222222, 
-					map:textureLoader.load( "net.png")
+					map: textureLoader.load( "net.png")
 				});
 				material.map.repeat.x = 28;
 				material.map.repeat.y = 2;
@@ -359,8 +359,7 @@
 
 				var m = new THREE.MeshPhongMaterial( { 
 					color: 0xffffff, 
-					map:THREE.ImageUtils.loadTexture( "surface0.jpg"), 
-					ambient: 0x000000, 
+					map: textureLoader.load( "surface0.jpg"), 
 					specular: 0x545454 
 				} );
 				m.map.repeat.x = 0.1;
