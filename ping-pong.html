@@ -528,14 +528,16 @@
 				}
 
 
-				// find intersections
+			//  find intersections.
 				var vector = new THREE.Vector3( rayX, rayY, 1 );
 				projector.unprojectVector( vector, camera );
 
 				var ray = new THREE.Ray( camera.position, vector.sub( camera.position ).normalize() );
 
 				//  var intersect = ray.intersectObject( hitMesh );
-				var intersect = ray.set(hitMesh.position, ball.position);
+				var intersect = ray.set(camera.position, hitMesh.position);
+
+				console.log({intersect:intersect});
 
 				if ( intersect.length > 0 && !hitting) {
 					paddleTarget = intersect[0].point;
