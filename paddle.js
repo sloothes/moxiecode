@@ -19,7 +19,7 @@
 	"DbgColor" : 15658734,
 	"DbgIndex" : 0,
 	"DbgName" : "Color_D03",
-	"colorAmbient" : [0.0, 0.0, 0.0],
+	"colormbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 0.847059, 0.396078],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -37,7 +37,6 @@
 	"DbgColor" : 60928,
 	"DbgIndex" : 2,
 	"DbgName" : "Color_B04",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 0.698039, 0.6],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -46,7 +45,6 @@
 	"DbgColor" : 238,
 	"DbgIndex" : 3,
 	"DbgName" : "Color_007",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.227451, 0.227451, 0.227451],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -55,7 +53,6 @@
 	"DbgColor" : 15658496,
 	"DbgIndex" : 4,
 	"DbgName" : "Color_009",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.05, 0.05, 0.05],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -64,7 +61,6 @@
 	"DbgColor" : 61166,
 	"DbgIndex" : 5,
 	"DbgName" : "Wood_Floor_Light",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.8, 0.690196, 0.498039],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -73,7 +69,6 @@
 	"DbgColor" : 15597806,
 	"DbgIndex" : 6,
 	"DbgName" : "Wood_Cherry_Original",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.34902, 0.196078, 0.094118],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -82,7 +77,6 @@
 	"DbgColor" : 419610,
 	"DbgIndex" : 7,
 	"DbgName" : "FrontColor",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 1.0, 1.0],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	}],
