@@ -536,7 +536,8 @@
 
 				var ray = new THREE.Ray( camera.position, vector.sub( camera.position ).normalize() );
 
-				var intersect = ray.intersectPlane( hitMesh );
+				//  var intersect = ray.intersectObject( hitMesh );
+				var intersect = ray.set(hitMesh.position, ball.position);
 
 				if ( intersect.length > 0 && !hitting) {
 					paddleTarget = intersect[0].point;
