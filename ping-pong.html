@@ -126,8 +126,6 @@
 				camera = new THREE.PerspectiveCamera( 40, aspect, 1, 700 );
 				camera.position.set(0,50,-112);
 				scene.add(camera);
-				
-
 
 				// Floor
 				var floorPlane = new THREE.PlaneGeometry(1000,400);
@@ -246,10 +244,10 @@
 				try {
 
 					webglRenderer = new THREE.WebGLRenderer({ 
-						scene: scene, 
+						antialias: true,
+						preserveDrawingBuffer: true,
+						clearAlpha: 1.0,
 						clearColor: 0x000000, 
-						clearAlpha: 1.0, 
-						antialias: true 
 					});
 
 					webglRenderer.setSize( window.innerWidth/sizeRatio, window.innerHeight/sizeRatio );
