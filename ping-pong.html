@@ -42,6 +42,7 @@
 
 			var camera;
 			var scene;
+			var projector;
 			var webglRenderer;
 
 			var has_gl = 0;
@@ -64,7 +65,6 @@
 			var paddleChild;
 			var paddleAI;
 			var paddleChildAI;
-			var projector = new THREE.Projector();
 			var hitMesh;
 			var paddleTarget = new THREE.Vector3();
 			var paddleTargetAI = new THREE.Vector3();
@@ -126,6 +126,8 @@
 				camera = new THREE.PerspectiveCamera( 40, aspect, 1, 700 );
 				camera.position.set(0,50,-112);
 				scene.add(camera);
+
+                projector = new THREE.Projector();
 
 				// Floor
 				var floorPlane = new THREE.PlaneGeometry(1000,400);
@@ -240,40 +242,30 @@
 				loader.load( "paddle.js", paddleLoaded );
 				loader.load( "table.js", tableLoaded );
 
+                webglRenderer = new THREE.WebGLRenderer({ 
+                    antialias: true,
+                    preserveDrawingBuffer: true,
+                    clearAlpha: 1.0,
+                    clearColor: 0x000000, 
+                });
 
-				try {
+                webglRenderer.setSize( window.innerWidth/sizeRatio, window.innerHeight/sizeRatio );
 
-					webglRenderer = new THREE.WebGLRenderer({ 
-						antialias: true,
-						preserveDrawingBuffer: true,
-						clearAlpha: 1.0,
-						clearColor: 0x000000, 
-					});
+                webglRenderer.shadowMap.enabled = true;
+                webglRenderer.shadowMapSoft = true;
 
-					webglRenderer.setSize( window.innerWidth/sizeRatio, window.innerHeight/sizeRatio );
+                container.appendChild( webglRenderer.domElement );
+                has_gl = 1;
+                THREEx.WindowResize(webglRenderer, camera);
 
-					webglRenderer.shadowMap.enabled = true;
-					webglRenderer.shadowMapSoft = true;
+                webglRenderer.domElement.style.position = "absolute";
+                webglRenderer.domElement.style.top = "0px";
+                webglRenderer.domElement.style.left = "0px";
 
-					container.appendChild( webglRenderer.domElement );
-					has_gl = 1;
-					THREEx.WindowResize(webglRenderer, camera);
-
-					webglRenderer.domElement.style.position = "absolute";
-					webglRenderer.domElement.style.top = "0px";
-					webglRenderer.domElement.style.left = "0px";
-
-					if (sizeRatio > 1) {
-						webglRenderer.domElement.style.webkitTransform = "scale3d("+sizeRatio+", "+sizeRatio+", 1)";
-						webglRenderer.domElement.style.webkitTransformOrigin = "0 0 0";
-					}
-
-				} catch (e) {
-					// need webgl
-					document.getElementById('info').innerHTML = "<P><BR><B>Note.</B> You need a modern browser that supports WebGL for this to run the way it is intended.<BR>For example. <a href='http://www.google.com/landing/chrome/beta/' target='_blank'>Google Chrome 9+</a> or <a href='http://www.mozilla.com/firefox/beta/' target='_blank'>Firefox 4+</a>.<BR><BR>If you are already using one of those browsers and still see this message, it's possible that you<BR>have old blacklisted GPU drivers. Try updating the drivers for your graphic card.<BR>Or try to set a '--ignore-gpu-blacklist' switch for the browser.</P><CENTER><BR><img src='../general/WebGL_logo.png' border='0'></CENTER>";
-					document.getElementById('info').style.display = "block";
-					return;
-				}
+                if (sizeRatio > 1) {
+                    webglRenderer.domElement.style.webkitTransform = "scale3d("+sizeRatio+", "+sizeRatio+", 1)";
+                    webglRenderer.domElement.style.webkitTransformOrigin = "0 0 0";
+                }
 				
 			}
 
