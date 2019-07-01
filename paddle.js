@@ -19,7 +19,6 @@
 	"DbgColor" : 15658734,
 	"DbgIndex" : 0,
 	"DbgName" : "Color_D03",
-	"colormbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 0.847059, 0.396078],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
@@ -28,7 +27,6 @@
 	"DbgColor" : 15597568,
 	"DbgIndex" : 1,
 	"DbgName" : "Color_A06",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.8, 0.0, 0.0],
 	"colorSpecular" : [0.33, 0.33, 0.33]
 	},
