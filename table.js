@@ -19,7 +19,6 @@
 	"DbgColor" : 15658734,
 	"DbgIndex" : 0,
 	"DbgName" : "FrontColor",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 1.0, 1.0],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -29,7 +28,6 @@
 	"DbgColor" : 15597568,
 	"DbgIndex" : 1,
 	"DbgName" : "_DarkOliveGreen_",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.17, 0.28, 0.43],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -39,7 +37,6 @@
 	"DbgColor" : 60928,
 	"DbgIndex" : 2,
 	"DbgName" : "_White_",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 1.0, 1.0],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -49,7 +46,6 @@
 	"DbgColor" : 238,
 	"DbgIndex" : 3,
 	"DbgName" : "_Charcoal_",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.0, 0.0, 0.0],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -59,7 +55,6 @@
 	"DbgColor" : 15658496,
 	"DbgIndex" : 4,
 	"DbgName" : "BackColor",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.670588, 0.690196, 0.8],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -69,7 +64,6 @@
 	"DbgColor" : 61166,
 	"DbgIndex" : 5,
 	"DbgName" : "_Snow_",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [1.0, 0.980392, 0.980392],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
@@ -79,7 +73,6 @@
 	"DbgColor" : 15597806,
 	"DbgIndex" : 6,
 	"DbgName" : "_Black_",
-	"colorAmbient" : [0.0, 0.0, 0.0],
 	"colorDiffuse" : [0.0, 0.0, 0.0],
 	"shading" : "Phong",
 	"colorSpecular" : [0.33, 0.33, 0.33]
