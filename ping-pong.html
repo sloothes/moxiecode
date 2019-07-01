@@ -532,7 +532,7 @@
 
 				// find intersections
 				var vector = new THREE.Vector3( rayX, rayY, 1 );
-				vector.unproject( vector, camera );
+				projector.unproject( vector, camera );
 
 				var ray = new THREE.Ray( camera.position, vector.sub( camera.position ).normalize() );
 
