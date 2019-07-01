@@ -134,7 +134,6 @@
 				var material = new THREE.MeshPhongMaterial({ 
 					color: 0xffffff, 
 					map: textureLoader.load( "floor.jpg"), 
-					ambient: 0xaaaaaa 
 				});
 				material.map.repeat.x = 12;
 				material.map.repeat.y = 4;
@@ -189,9 +188,6 @@
 				var material = new THREE.MeshLambertMaterial({ 
 					color: 0x666666, 
 					map: textureLoader.load( "ball2.jpg"), 
-					ambient: 0xcccccc, 
-					specular: 0xffffff, 
-					shininess: 30 
 				});
 				ball = new THREE.Mesh( ballGeomertry, material );
 				ball.position.set(0,50,0);
@@ -228,16 +224,16 @@
 
 				light.castShadow = true;
 
-				light.shadowCameraNear = 40;
-				light.shadowCameraFar = 200;
-				light.shadowCameraFov = 60;
+				light.shadow.camera.near = 40;
+				light.shadow.camera.far = 200;
+				light.shadow.camera.fov = 60;
 
 				//light.shadowCameraVisible = true;
 
-				light.shadowDarkness = 0.85;
+				//light.shadowDarkness = 0.85;
 
-				light.shadowMapWidth = 1024/sizeRatio;
-				light.shadowMapHeight = 1024/sizeRatio;
+				light.shadow.mapSize.width = 1024/sizeRatio;
+				light.shadow.mapSize.height = 1024/sizeRatio;
 
 				scene.add( light );
 
@@ -258,7 +254,7 @@
 
 					webglRenderer.setSize( window.innerWidth/sizeRatio, window.innerHeight/sizeRatio );
 
-					webglRenderer.shadowMapEnabled = true;
+					webglRenderer.shadowMap.enabled = true;
 					webglRenderer.shadowMapSoft = true;
 
 					container.appendChild( webglRenderer.domElement );
