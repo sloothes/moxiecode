@@ -100,6 +100,8 @@
 			var touchDevice = false;
 			var sizeRatio = 1;
 
+			var textureLoader = new THREE.TextureLoader();
+
 			document.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 			document.addEventListener( 'mousedown', function ( event ) { event.preventDefault(); }, false );
 			document.addEventListener( 'touchstart', function ( event ) { event.preventDefault(); }, false );
@@ -125,9 +127,15 @@
 				camera.position.set(0,50,-112);
 				scene.add(camera);
 				
+
+
 				// Floor
 				var floorPlane = new THREE.PlaneGeometry(1000,400);
-				var material = new THREE.MeshPhongMaterial( { color: 0xffffff, map:THREE.ImageUtils.loadTexture( "floor.jpg"), ambient: 0xaaaaaa } );
+				var material = new THREE.MeshPhongMaterial({ 
+					color: 0xffffff, 
+					map: textureLoader.load( "floor.jpg"), 
+					ambient: 0xaaaaaa 
+				});
 				material.map.repeat.x = 12;
 				material.map.repeat.y = 4;
 				material.map.wrapS = THREE.RepeatWrapping;
@@ -145,7 +153,11 @@
 
 				// Cover
 				var coverPlane = new THREE.PlaneGeometry(400,1000);
-				var material = new THREE.MeshBasicMaterial( { color: 0xffffff, map:THREE.ImageUtils.loadTexture( "circle.png"), transparent: true } );
+				var material = new THREE.MeshBasicMaterial({ 
+					color: 0xffffff, 
+					map: textureLoader.load( "circle.png"), 
+					transparent: true 
+				});
 				var coverMesh = new THREE.Mesh( coverPlane, material );
 				
 				coverMesh.position.y = 1;
@@ -174,7 +186,13 @@
 
 				// Ball
 				var ballGeomertry = new THREE.SphereGeometry(ballRadius,24,16);
-				var material = new THREE.MeshLambertMaterial( { color: 0x666666, map:THREE.ImageUtils.loadTexture( "ball2.jpg"), ambient: 0xcccccc, specular: 0xffffff, shininess: 30 } );
+				var material = new THREE.MeshLambertMaterial({ 
+					color: 0x666666, 
+					map: textureLoader.load( "ball2.jpg"), 
+					ambient: 0xcccccc, 
+					specular: 0xffffff, 
+					shininess: 30 
+				});
 				ball = new THREE.Mesh( ballGeomertry, material );
 				ball.position.set(0,50,0);
 				
@@ -185,7 +203,11 @@
 
 				// Shadow
 				var shadowPlane = new THREE.PlaneGeometry(2.2,2.2);
-				shadowMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, map:THREE.ImageUtils.loadTexture( "shadow.png"), transparent: true } );
+				shadowMaterial = new THREE.MeshBasicMaterial({ 
+					color: 0xffffff, 
+					map: textureLoader.load( "shadow.png"), 
+					transparent: true 
+				});
 				shadow = new THREE.Mesh( shadowPlane, shadowMaterial );
 				shadow.depthTest = false;
 				shadow.position.set(0,bound.table-ballRadius+0.05,0);
@@ -226,7 +248,14 @@
 
 
 				try {
-					webglRenderer = new THREE.WebGLRenderer( { scene: scene, clearColor: 0x000000, clearAlpha: 1.0, antialias: true } );
+
+					webglRenderer = new THREE.WebGLRenderer({ 
+						scene: scene, 
+						clearColor: 0x000000, 
+						clearAlpha: 1.0, 
+						antialias: true 
+					});
+
 					webglRenderer.setSize( window.innerWidth/sizeRatio, window.innerHeight/sizeRatio );
 
 					webglRenderer.shadowMapEnabled = true;
@@ -271,7 +300,12 @@
 				console.log({"object": geometry});
 
 				var netPlane = new THREE.PlaneGeometry(70,5);
-				var material = new THREE.MeshBasicMaterial( {opacity:0.5, transparent: true, color: 0x222222, map:THREE.ImageUtils.loadTexture( "net.png")} );
+				var material = new THREE.MeshBasicMaterial({
+					opacity:0.5, 
+					transparent: true, 
+					color: 0x222222, 
+					map:textureLoader.load( "net.png")
+				});
 				material.map.repeat.x = 28;
 				material.map.repeat.y = 2;
 				material.map.wrapS = THREE.RepeatWrapping;
@@ -286,7 +320,11 @@
 				scene.add(net);
 
 				var frontPlane = new THREE.PlaneGeometry(9,2.5);
-				var material = new THREE.MeshPhongMaterial( {color: 0x000000, map:THREE.ImageUtils.loadTexture( "stiga.png"), specular: 0x545454} );
+				var material = new THREE.MeshPhongMaterial({
+					color: 0x000000, 
+					map: textureLoader.load( "stiga.png"), 
+					specular: 0x545454
+				});
 				var frontLeft = new THREE.Mesh(frontPlane, material);
 				frontLeft.position.set(25,31.6,-56.4);
 				frontLeft.rotation.x = -Math.PI/2;
@@ -356,7 +394,12 @@
 				paddle.add(paddleChild);
 
 				var markPlane = new THREE.PlaneGeometry(1.05,2.1);
-				var material = new THREE.MeshPhongMaterial( {color: 0xffffff, transparent: true, map:THREE.ImageUtils.loadTexture( "mark.png"), specular: 0x333333} );
+				var material = new THREE.MeshPhongMaterial({
+					color: 0xffffff, 
+					transparent: true, 
+					map: textureLoader.load( "mark.png"), 
+					specular: 0x333333
+				});
 				var mark = new THREE.Mesh(markPlane, material);
 				mark.position.set(0,-10.45,0.45);
 				mark.rotation.x = Math.PI/2;
