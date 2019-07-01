@@ -269,7 +269,8 @@
 			}
 
 			function tableLoaded( geometry ) {
-				
+				console.log({"object": geometry});
+
 				var netPlane = new THREE.PlaneGeometry(70,5);
 				var material = new THREE.MeshBasicMaterial( {opacity:0.5, transparent: true, color: 0x222222, map:THREE.ImageUtils.loadTexture( "net.png")} );
 				material.map.repeat.x = 28;
